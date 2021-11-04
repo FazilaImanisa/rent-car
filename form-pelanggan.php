@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<?php
-    include("navbar.php");
-?>
     <div class="container">
         <div class="card">
             <div class="card-header bg-info">
                 <h4 class="text-white">Form pelanggan</h4>
+                <?php
+                include("navbar.php");
+                ?>
             </div>
 
             <div class="card-body">
@@ -22,9 +22,9 @@
                 if(isset($_GET["id_pelanggan"])){
                     // memeriksa ketika load file ini,
                     // apakah membawa data GET dengan nama id_pelanggan
-                    // jika ture, maka form anggota digunakan untuk edit
+                    // jika ture, maka form pelanggan digunakan untuk edit
 
-                    # mengakses data anggota dari id_anggota yg dikirim
+                    # mengakses data pelanggan dari id_pelanggan yg dikirim
                     include "connection.php";
                     $id_pelanggan = $_GET["id_pelanggan"];
                     $sql = "select * from pelanggan where id_pelanggan='$id_pelanggan'";
@@ -34,26 +34,26 @@
                     $pelanggan = mysqli_fetch_array($hasil);
                     ?>
                     <form action="process-pelanggan.php" method="post">
-                    ID pelanggan
+                    ID Pelanggan
                     <input type="text" name="id_pelanggan" 
                     class="form-control mb-2" required
                     value="<?=$pelanggan["id_pelanggan"];?>" readonly />
 
-                    Nama pelanggan
+                    Nama Pelanggan
                     <input type="text" name="nama_pelanggan" 
                     class="form-control mb-2" required
                     value="<?=$pelanggan["nama_pelanggan"];?>" />
+
+                    Alamat pelanggan
+                    <input type="text" name="alamat_pelanggan" 
+                    class="form-control mb-2" required
+                    value="<?=$pelanggan["alamat"];?>" />
 
                     Kontak
                     <input type="text" name="kontak" 
                     class="form-control mb-2" required
                     value="<?=$pelanggan["kontak"];?>" />
 
-                    Alamat pelanggan
-                    <input type="text" name="alamat_pelanggan" 
-                    class="form-control mb-2" required
-                    value="<?=$pelanggan["alamat_pelanggan"];?>" />
-                    
                     <button type="submit" class="btn btn-success btn-block"
                     name="edit_pelanggan">
                         Simpan
@@ -64,17 +64,20 @@
                     // jika false, maka form pelanggan digunakan untuk insert
                     ?>
                     <form action="process-pelanggan.php" method="post">
+                    ID pelanggan
+                    <input type="text" name="id_pelanggan" 
+                    class="form-control mb-2" required />
 
                     Nama pelanggan
                     <input type="text" name="nama_pelanggan" 
                     class="form-control mb-2" required />
 
-                    Kontak
-                    <input type="text" name="kontak" 
+                    Alamat pelanggan
+                    <input type="text" name="alamat" 
                     class="form-control mb-2" required />
 
-                    Alamat pelanggan
-                    <input type="text" name="alamat_pelanggan" 
+                    Kontak
+                    <input type="text" name="kontak" 
                     class="form-control mb-2" required />
 
                     <button type="submit"
