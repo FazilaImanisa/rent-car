@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar pelanggan Perpustakaan</title>
+    <title>Daftar Pelanggan</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -50,8 +50,8 @@
                             <div class="col-lg-8 col-md-10">
                                 <h5>Nama Pelanggan: <?php echo $pelanggan["nama_pelanggan"];?></h5>
                                 <h6>ID Pelanggan: <?php echo $pelanggan["id_pelanggan"];?></h6>
-                                <h6>Alamat: <?php echo $pelanggan["alamat_pelanggan"];?></h6>
-                                <h6>Kontak: <?php echo $pelanggan["kontak"];?></h6>
+                                <h6>Kontak: <?php echo $pelanggan["alamat_pelanggan"];?></h6>
+                                <h6>Alamat: <?php echo $pelanggan["kontak"];?></h6>
                             </div>
 
                             <!-- bagian tombol pilihan -->

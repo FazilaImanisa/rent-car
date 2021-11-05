@@ -50,13 +50,13 @@
                     value="<?=$karyawan["kontak"];?>" />
 
                     Alamat
-                    <input type="text" name="alamat" 
+                    <input type="text" name="alamat_karyawan" 
                     class="form-control mb-2" required
-                    value="<?=$karyawan["alamat"];?>" />
+                    value="<?=$karyawan["alamat_karyawan"];?>" />
 
                     Password
                     <input type="text" name="password" 
-                    class="form-control mb-2" required />
+                    class="form-control mb-2" required
                     value="<?=$karyawan["password"];?>" />
 
                     <button type="submit" class="btn btn-success btn-block"
@@ -83,7 +83,7 @@
                     class="form-control mb-2" required />
 
                     Alamat
-                    <input type="text" name="alamat_pelanggan" 
+                    <input type="text" name="alamat_karyawan" 
                     class="form-control mb-2" required />
 
                     Password

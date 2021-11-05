@@ -44,10 +44,10 @@
                     class="form-control mb-2" required
                     value="<?=$pelanggan["nama_pelanggan"];?>" />
 
-                    Alamat pelanggan
+                    Alamat Pelanggan
                     <input type="text" name="alamat_pelanggan" 
                     class="form-control mb-2" required
-                    value="<?=$pelanggan["alamat"];?>" />
+                    value="<?=$pelanggan["alamat_pelanggan"];?>" />
 
                     Kontak
                     <input type="text" name="kontak" 
@@ -66,14 +66,14 @@
                     <form action="process-pelanggan.php" method="post">
                     ID pelanggan
                     <input type="text" name="id_pelanggan" 
-                    class="form-control mb-2" required />
+                    class="form-control mb-2" required readonly/>
 
                     Nama pelanggan
                     <input type="text" name="nama_pelanggan" 
                     class="form-control mb-2" required />
 
                     Alamat pelanggan
-                    <input type="text" name="alamat" 
+                    <input type="text" name="alamat_pelanggan" 
                     class="form-control mb-2" required />
 
                     Kontak
