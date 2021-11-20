@@ -68,7 +68,7 @@
                             value="<?=$mobil["tahun_pembuatan"];?>">
 
                             Biaya Sewa
-                            <input type="text" name="biaya_sewa_per_hari"
+                            <input type="text" name="biaya_sewa"
                             class="form-control mb-2" required
                             value="<?=$mobil["biaya_sewa_per_hari"];?>">
 

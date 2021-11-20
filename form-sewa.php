@@ -92,7 +92,7 @@ if (!isset($_SESSION["karyawan"])) {
                 class="form-control mb-2">
                 
                 <button type="submit" class="btn btn-block btn-dark">
-                    sewa
+                    Sewa
                 </button>
                 </form>
             </div>
