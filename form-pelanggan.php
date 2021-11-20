@@ -1,3 +1,10 @@
+<?php
+session_start();
+# jika saat load halaman ini, pastikan telah login sebagai petugas
+if (!isset($_SESSION["karyawan"])) {
+    header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +17,10 @@
 <body>
     <div class="container">
         <div class="card">
-            <div class="card-header bg-info">
-                <h4 class="text-white">Form pelanggan</h4>
-                <?php
-                include("navbar.php");
-                ?>
+            <div class="card-header bg-success">
+                <h4 class="text-white text-center">
+                    Form pelanggan
+                </h4>
             </div>
 
             <div class="card-body">
@@ -28,12 +34,17 @@
                     include "connection.php";
                     $id_pelanggan = $_GET["id_pelanggan"];
                     $sql = "select * from pelanggan where id_pelanggan='$id_pelanggan'";
+
                     // eksekusiperintah SQL
                     $hasil = mysqli_query($connect, $sql);
+
                     # konversi hasil query ke bentuk array
                     $pelanggan = mysqli_fetch_array($hasil);
                     ?>
-                    <form action="process-pelanggan.php" method="post">
+
+                    <form action="process-pelanggan.php" method="post"
+                    onsubmit="return confirm('Are you sure?')">
+
                     ID Pelanggan
                     <input type="text" name="id_pelanggan" 
                     class="form-control mb-2" required
@@ -49,7 +60,7 @@
                     class="form-control mb-2" required
                     value="<?=$pelanggan["alamat_pelanggan"];?>" />
 
-                    Kontak
+                    Kontak Pelanggan
                     <input type="text" name="kontak" 
                     class="form-control mb-2" required
                     value="<?=$pelanggan["kontak"];?>" />
@@ -64,24 +75,20 @@
                     // jika false, maka form pelanggan digunakan untuk insert
                     ?>
                     <form action="process-pelanggan.php" method="post">
-                    ID pelanggan
-                    <input type="text" name="id_pelanggan" 
-                    class="form-control mb-2" required readonly/>
 
-                    Nama pelanggan
+                    Nama Pelanggan
                     <input type="text" name="nama_pelanggan" 
                     class="form-control mb-2" required />
 
-                    Alamat pelanggan
+                    Alamat Pelanggan
                     <input type="text" name="alamat_pelanggan" 
                     class="form-control mb-2" required />
 
-                    Kontak
+                    Kontak Pelanggan
                     <input type="text" name="kontak" 
                     class="form-control mb-2" required />
 
-                    <button type="submit"
-                    class="btn btn-success btn-block"
+                    <button type="submit" class="btn btn-success btn-block"
                     name="simpan_pelanggan">
                         Simpan
                     </button>
