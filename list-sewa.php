@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Penyewaan</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+<?php include("navbar.php") ?>
     <div class="container">
         <div class="card">
             <div class="card-header bg-dark">
-            <?php include("navbar.php") ?>
                 <h4 class="text-white text-center">
                     Daftar Penyewaan
                 </h4>
